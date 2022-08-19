@@ -46,11 +46,6 @@ user_sim_mat <- as.matrix(similarity_users )
 index <- which(user_sim_mat %in% sort(user_sim_mat, decreasing=TRUE)[1:10])[1:10] # 유사도가 높은 사용자 순으로 내림차순 정렬
 rownames(user_sim_mat)[index][1:10] # 유사도 높은 사용자 이름 출력
 
-# raitng_matrix_topN <- as(rating_matrix@data[index,], "realRatingMatrix") # 유사도 높았던 데이터 가져와서 
-# topN_new_sim <- similarity(raitng_matrix_topN, new_matrix, method="cosine", which = "users") # new_mat와 유사도 계산
-# image(topN_new_sim, main = "User similarity") # 완전 유사함
-# save(rating_matrix, file = "D:/Project/Hackathon/RecSys/rating_matrix.RData")
-
 ## Tour Mate Recommender
 setwd("D:/Project/Hackathon/RecSys")
 Rec_Tourmate <-
