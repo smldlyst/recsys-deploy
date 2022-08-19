@@ -1,0 +1,27 @@
+(cmd 실행)
+docker login
+
+(도커파일 작성돼있는 작업경로로 변경) cd D:\Project\Hackathon\RecSys_API
+(도커 이미지 빌드업) docker build -t  smldlyst/pnu-ai-hackathon:api .
+(도커 이미지 실행) docker run -p 8080:8080 smldlyst/pnu-ai-hackathon:api
+
+(도커 컨테이너 확인) docker ps -a
+(도커 이미지 확인) docker images
+(도커 이미지 이름변경) docker tag repository:tag smldlyst/pnu-ai-hackathon:recsys
+
+(컨테이너 중지 및 삭제) docker desktop 열어서 명령하기.
+
+(도커 로그인) docker login
+(도커허브에 업로드)  docker push smldlyst/pnu-ai-hackathon:api
+https://hub.docker.com/repository/docker/smldlyst/pnu-ai-hackathon 가서 확인
+
+<GCP Cloud shell에서 docker 실행>
+docker login
+(도커 이미지 가져오기) docker pull smldlyst/pnu-ai-hackathon:recsys
+(가져온 이미지 확인) docker images
+
+docker tag smldlyst/pnu-ai-hackathon:api gcr.io/pnu-ai-hackathon/smldlyst/pnu-ai-hackathon:api
+                                                          #호스트명#프로젝트명   #이미지명:태그
+docker push gcr.io/pnu-ai-hackathon/smldlyst/pnu-ai-hackathon:api
+
+http:gcr.io/pnu-ai-hackathon/smldlyst/pnu-ai-hackathon 가서 확인
